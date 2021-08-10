@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastrar conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-margin-bottom">
+  <form [formGroup]="contasForm" (submit)="registrarConta()">
+    <ion-item class="ion-margin-bottom">
+      <ion-icon color="if" slot="start" name="person"></ion-icon>
+      <ion-input formControlName="parceiro" type="text" placeholder="Parceiro Comercial" autfocus="true"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-icon color="if" slot="start" name="document"></ion-icon>
+      <ion-input formControlName="descricao" type="text" placeholder="Descrição da conta" autfocus="true"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-icon color="if" slot="start" name="wallet"></ion-icon>
+      <ion-input type="number" formControlName="valor" type="text" placeholder="Valor da conta" autfocus="true"></ion-input>
+    </ion-item>
+
+    <ion-radio-group value="pagar" formControlName="tipo" class="ion-margin-bottom">
+      <ion-item class="ion-margin-bottom">
+        <ion-label>A pagar</ion-label>
+        <ion-radio slot="start" value="pagar"></ion-radio>
+      </ion-item>
+
+      <ion-item class="ion-margin-bottom">
+        <ion-label>A receber</ion-label>
+        <ion-radio slot="start" value="receber" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+
+
+    <ion-button [disabled]="contasForm.invalid" id="btn-login" type="submit" expand="block" fill="solid" color="dark" class="ion-margin-top">
+      Enviar
+    </ion-button>
+  </form>
+
+</ion-content>

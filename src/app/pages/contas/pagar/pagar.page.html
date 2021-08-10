@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contas a pagar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item *ngFor="let conta of listaContas">
+      <ion-label>
+        <h2> {{ conta.parceiro }} </h2>
+        <p> {{ conta.descricao }}</p>
+        <h4>R$ {{ conta.valor }} </h4>
+      </ion-label>
+      <ion-icon slot="end" name="trash" (click)="remove(conta)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

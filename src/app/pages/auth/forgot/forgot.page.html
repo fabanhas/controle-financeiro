@@ -1,0 +1,28 @@
+<ion-content class="ion-padding">
+
+    <topo-login></topo-login>
+  
+  
+    <form [formGroup]="loginForm" (submit)="recoverPass()">
+      <ion-item>
+        <ion-icon color="if" slot="start" name="mail"></ion-icon>
+        <ion-input formControlName="email" type="email" placeholder="Digite seu email" autfocus="true"></ion-input>
+      </ion-item>
+    
+      <ion-button [disabled]="loginForm.invalid" id="btn-login" type="submit" expand="block" fill="solid" color="dark">
+        Enviar
+      </ion-button>
+    </form>
+    
+   
+  </ion-content>
+  
+  <ion-footer>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/auth']" expand="block" fill="clear" shape="round">
+          Voltar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
